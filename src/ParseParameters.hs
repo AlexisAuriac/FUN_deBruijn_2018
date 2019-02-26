@@ -3,22 +3,33 @@ module ParseParameters (
     ) where
 
 import Text.Read
+import Utilities
 
 getOrder :: String -> Maybe Integer
-getOrder order = readMaybe order :: Maybe Integer
+getOrder order = do
+    let orderInt = readMaybe order :: Maybe Integer
+    if orderInt <= Just 0 then Nothing else orderInt
 
-allDifferent :: [Char] -> Bool
-allDifferent []     = True
-allDifferent (x:xs) = x `notElem` xs && allDifferent xs
-
-getOption :: String -> Maybe String
-getOption alpha = if allDifferent alpha
+getAlphabet :: String -> Maybe String
+getAlphabet alpha = if allDifferent alpha
     then Just alpha
     else Nothing
+
+isOption :: String -> Bool
+isOption "--check" = True
+isOption "--unique" = True
+isOption "--clean" = True
+isOption _ = False
 
 parseParameters :: [String] -> Maybe (Maybe Integer, Maybe String, Maybe String)
 parseParameters args
     | length args == 1 = Just (getOrder (args !! 0), Just "01", Just "")
-    | length args == 2 = Just (getOrder (args !! 0), getOption (args !! 1), Just "")
-    -- | length args == 2 = parse2Parameters args
+    | length args == 2 = if isOption (args !! 1)
+        then Just (getOrder (args !! 0), Just "01", Just (args !! 1))
+        else Just (getOrder (args !! 0), getAlphabet (args !! 1), Just "")
+    | length args == 3 = if isOption (args !! 1)
+        then Just (getOrder (args !! 0), getAlphabet (args !! 2), Just (args !! 1))
+        else if isOption (args !! 2)
+            then Just (getOrder (args !! 0), getAlphabet (args !! 1), Just (args !! 2))
+            else Just (getOrder (args !! 0), getAlphabet (args !! 1), Nothing)
     | otherwise = Nothing

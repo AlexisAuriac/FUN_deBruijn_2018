@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 40820d587e9892c6a4078c4e05207f7e57f45d2cf89bc9d7b30eb005b8555c07
+-- hash: 8d6e00c007bec7e1569a161fc6868625514c5c1fe30cf5b78c289a05388f0abf
 
 name:           deBruijn
 version:        0.1.0.0
@@ -26,6 +26,7 @@ library
   exposed-modules:
       Check
       DeBruijn
+      Generate
       MyDie
       ParseParameters
       Utilities

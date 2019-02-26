@@ -1,6 +1,7 @@
 module Main where
 
 import System.Environment
+import Data.Maybe
 
 import ParseParameters
 import MyDie
@@ -16,4 +17,4 @@ main = do
         Just (Nothing, _, _) -> myDie "Invalid order"
         Just (_, Nothing, _) -> myDie "Invalid alphabet"
         Just (_, _, Nothing) -> myDie "Invalid option"
-        _ -> deBrujin parsed
+        _ -> deBrujin (fromJust parsed)

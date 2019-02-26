@@ -27,8 +27,10 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      DeBrujin
       MyDie
+      Utilities
+      ParseParameters
   other-modules:
       Paths_deBrujin
   hs-source-dirs:

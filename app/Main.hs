@@ -1,10 +1,10 @@
 module Main where
 
 import System.Environment
-import System.Exit
 
-import Lib
+import ParseParameters
 import MyDie
+import DeBrujin
 
 main :: IO ()
 main = do

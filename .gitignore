@@ -2,8 +2,8 @@
 project.cabal
 *~
 
-deBrujin
+deBruijn
 
 # sublime-text
-deBrujin.sublime-project
-deBrujin.sublime-workspace
+deBruijn.sublime-project
+deBruijn.sublime-workspace

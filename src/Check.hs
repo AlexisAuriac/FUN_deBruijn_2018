@@ -3,5 +3,5 @@ module Check (
     ) where
 
 check :: Integer -> String -> IO ()
-check order str = getLine >>= \line ->
+check order alphabet = getLine >>= \line ->
     putStrLn line

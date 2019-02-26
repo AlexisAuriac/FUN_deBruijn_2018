@@ -4,63 +4,60 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c7a8ca7c3f6c94f6c0730d3ce9716efb24399ae570c105b9925a986ef6b2c600
+-- hash: 40820d587e9892c6a4078c4e05207f7e57f45d2cf89bc9d7b30eb005b8555c07
 
-name:           deBrujin
+name:           deBruijn
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/deBrujin#readme>
-homepage:       https://github.com/githubuser/deBrujin#readme
-bug-reports:    https://github.com/githubuser/deBrujin/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/deBruijn#readme>
+homepage:       https://github.com/githubuser/deBruijn#readme
+bug-reports:    https://github.com/githubuser/deBruijn/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2019 Author name here
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-extra-source-files:
-    README.md
-    ChangeLog.md
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/deBrujin
+  location: https://github.com/githubuser/deBruijn
 
 library
   exposed-modules:
-      MyDie
-      Utilities
-      ParseParameters
-      DeBrujin
       Check
+      DeBruijn
+      MyDie
+      ParseParameters
+      Utilities
   other-modules:
-      Paths_deBrujin
+      Paths_deBruijn
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable deBrujin
+executable deBruijn
   main-is: Main.hs
   other-modules:
-      Paths_deBrujin
+      Paths_deBruijn
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , deBrujin
+    , deBruijn
   default-language: Haskell2010
 
-test-suite deBrujin-test
+test-suite deBruijn-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_deBrujin
+      Paths_deBruijn
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , deBrujin
+    , deBruijn
   default-language: Haskell2010

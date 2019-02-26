@@ -1,11 +1,11 @@
 ##
 ## EPITECH PROJECT, 2018
-## deBrujin
+## deBruijn
 ## File description:
-## Makefile for deBrujin.
+## Makefile for deBruijn.
 ##
 
-NAME	=	deBrujin
+NAME	=	deBruijn
 
 all:
 	stack build

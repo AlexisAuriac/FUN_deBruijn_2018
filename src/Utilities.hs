@@ -3,5 +3,5 @@ module Utilities (
     ) where
 
 allDifferent :: [Char] -> Bool
-allDifferent []     = True
+allDifferent [] = True
 allDifferent (x:xs) = x `notElem` xs && allDifferent xs

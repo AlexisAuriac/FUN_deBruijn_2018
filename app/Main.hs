@@ -5,7 +5,7 @@ import Data.Maybe
 
 import ParseParameters
 import MyDie
-import DeBrujin
+import DeBruijn
 
 main :: IO ()
 main = do
@@ -17,4 +17,4 @@ main = do
         Just (Nothing, _, _) -> myDie "Invalid order"
         Just (_, Nothing, _) -> myDie "Invalid alphabet"
         Just (_, _, Nothing) -> myDie "Invalid option"
-        _ -> deBrujin (fromJust parsed)
+        _ -> deBruijn (fromJust parsed)

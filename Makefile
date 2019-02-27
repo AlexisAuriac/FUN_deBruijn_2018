@@ -8,7 +8,10 @@
 NAME	=	deBruijn
 
 all:
+	make $(NAME)
+
+$(NAME):
 	stack build
 	cp `stack path --local-install-root`/bin/$(NAME) .
 
-.PHONY:	all
+.PHONY:	all $(NAME)

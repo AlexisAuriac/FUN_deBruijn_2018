@@ -1,14 +1,11 @@
 module Main where
 
 import System.Environment
+import System.Exit
 import Data.Maybe
 
 import ParseParameters
-import MyDie
 import DeBruijn
-
-import System.IO (hPutStrLn, stderr)
-import System.Exit
 
 exitUsage :: IO ()
 exitUsage = do

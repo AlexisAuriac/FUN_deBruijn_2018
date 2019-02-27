@@ -1,8 +1,13 @@
-.stack-work/
-project.cabal
+*.hi
+*.o
 *~
+*\#*
 
+# binary
 deBruijn
+
+# stack
+.stack-work/
 
 # sublime-text
 deBruijn.sublime-project

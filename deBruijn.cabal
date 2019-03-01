@@ -24,10 +24,12 @@ source-repository head
 
 library
   exposed-modules:
-      Check
-      DeBruijn
-      ParseParameters
       Utilities
+      IsDeBruijn
+      ParseParameters
+      DeBruijn
+      Check
+      Unique
   other-modules:
       Paths_deBruijn
   hs-source-dirs:

@@ -5,9 +5,9 @@ module ParseParameters (
 import Text.Read
 import Utilities
 
-getOrder :: String -> Maybe Integer
+getOrder :: String -> Maybe Int
 getOrder order = do
-    let orderInt = readMaybe order :: Maybe Integer
+    let orderInt = readMaybe order :: Maybe Int
     if orderInt <= Just 0 then Nothing else orderInt
 
 getAlphabet :: String -> Maybe String
@@ -21,7 +21,7 @@ isOption "--unique" = True
 isOption "--clean" = True
 isOption _ = False
 
-parseParameters :: [String] -> Maybe (Maybe Integer, Maybe String, Maybe String)
+parseParameters :: [String] -> Maybe (Maybe Int, Maybe String, Maybe String)
 parseParameters args
     | length args == 1 = Just (getOrder (args !! 0), Just "01", Just "")
     | length args == 2 = if isOption (args !! 1)

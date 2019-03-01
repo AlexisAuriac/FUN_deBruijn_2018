@@ -2,6 +2,10 @@ module Check (
         check
     ) where
 
-check :: Integer -> String -> IO ()
+genWords :: Int -> String -> [String]
+genWords order alphabet = increment order alphabet
+
+
+check :: Int -> String -> IO ()
 check order alphabet = getLine >>= \line ->
-    putStrLn line
+    print (genWords order alphabet)

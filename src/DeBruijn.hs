@@ -6,7 +6,7 @@ import Data.Maybe
 
 import Check
 
-deBruijn :: (Maybe Integer, Maybe String, Maybe String) -> IO ()
+deBruijn :: (Maybe Int, Maybe String, Maybe String) -> IO ()
 deBruijn (order, str, option) = case option of
     Just "--check" -> check (fromJust order) (fromJust str)
     Just "--unique" -> putStrLn "TODO"

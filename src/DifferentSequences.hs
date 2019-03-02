@@ -3,7 +3,6 @@ module DifferentSequences (
     ) where
 
 import Utilities
-import IsDeBruijn
 
 differentSequences :: Int -> String -> String -> String -> Bool
 differentSequences order alphabet seq1 seq2 = do

@@ -6,12 +6,13 @@ import Data.Maybe
 
 import Check
 import Unique
+import Clean
 
 deBruijn :: (Maybe Int, Maybe String, Maybe String) -> IO ()
 deBruijn (order, alpha, option) = case option of
     Just "--check" -> check order' alpha'
     Just "--unique" -> unique order' alpha'
-    Just "--clean" -> putStrLn "TODO"
+    Just "--clean" -> clean order' alpha'
     _ -> putStrLn "TODO"
     where
         order' = fromJust order

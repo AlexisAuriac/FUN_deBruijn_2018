@@ -8,6 +8,8 @@ unique :: Int -> String -> IO ()
 unique order alphabet = do
     line1 <- getLine
     line2 <- getLine
-    if differentSequences order alphabet line1 line2
+    if isDeBruijn order alphabet line1
+    && isDeBruijn order alphabet line2
+    && differentSequences order alphabet line1 line2
         then putStrLn "OK"
         else putStrLn "KO"

@@ -8,7 +8,6 @@ deBruijn
 
 # stack
 .stack-work/
-project.cabal
 
 # sublime-text
 deBruijn.sublime-project

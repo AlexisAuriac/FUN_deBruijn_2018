@@ -5,11 +5,16 @@ module DeBruijn (
 import Data.Maybe
 
 import Check
+import Unique
+import Clean
 import Generate
 
 deBruijn :: (Maybe Int, Maybe String, Maybe String) -> IO ()
-deBruijn (order, str, option) = case option of
-    Just "--check" -> check (fromJust order) (fromJust str)
-    Just "--unique" -> putStrLn "TODO"
-    Just "--clean" -> putStrLn "TODO"
-    _ -> generate (fromJust order) (fromJust str)
+deBruijn (order, alpha, option) = case option of
+    Just "--check" -> check order' alpha'
+    Just "--unique" -> unique order' alpha'
+    Just "--clean" -> clean order' alpha'
+    _ -> generate order' alpha'
+    where
+        order' = fromJust order
+        alpha' = fromJust alpha

@@ -11,7 +11,7 @@ getOrder order = do
     if orderInt <= Just 0 then Nothing else orderInt
 
 getAlphabet :: String -> Maybe String
-getAlphabet alpha = if allDifferent alpha
+getAlphabet alpha = if (allDifferent alpha) && (length alpha > 0)
     then Just alpha
     else Nothing
 

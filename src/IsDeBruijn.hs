@@ -4,21 +4,13 @@ module IsDeBruijn (
 
 import Utilities
 
-getWords :: Int -> String -> [String]
-getWords order line = getWords' line
-    where
-        getWords' :: String -> [String]
-        getWords' line'
-            | lenLine == 0 = []
-            | lenLine < order = 
-                (line' ++ take (order - lenLine) line) : getWords' (drop 1 line')
-            | otherwise = take order line' : getWords' (drop 1 line')
-            where
-                lenLine = length line'
+getWords :: Int -> String -> Int -> [String]
+getWords _ _ 0 = []
+getWords order line nbWords = take order line:getWords order (drop 1 line) (nbWords - 1)
 
 isDeBruijn :: Int -> String -> String -> Bool
 isDeBruijn order alphabet line
     | length line /= length alphabet ^ order = False
     | not $ allElemsOf line alphabet = False
-    | not $ allDifferent $ getWords order line = False
+    | not $ allDifferent $ getWords order (cycle line) (length line) = False
     | otherwise = True

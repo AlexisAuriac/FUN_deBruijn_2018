@@ -13,11 +13,11 @@ allElemsOf :: (Eq a) => [a] -> [a] -> Bool
 allElemsOf [] _ = True
 allElemsOf (c:xs) src = c `elem` src && (allElemsOf xs src)
 
-rotate :: (Eq a) => [a] -> [a]
-rotate (x:xs) = xs ++ [x]
+rotate :: [a] -> [a]
+rotate xs = last xs:init xs
 
 -- unused, finds all the combinations given an order and an alphabet
-combinations :: (Eq a) => Word -> [a] -> [[a]]
+combinations :: Word -> [a] -> [[a]]
 combinations 0 _ = []
 combinations 1 alpha = [[i] | i <- alpha]
 combinations order alpha = [i:j | i <- alpha, j <- combinations (order - 1) alpha]
